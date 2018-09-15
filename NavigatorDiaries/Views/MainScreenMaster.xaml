@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.MainScreenMaster"
+             Title="Master">
+  <StackLayout>
+        
+        <ListView x:Name="NavItemsListView"
+              SeparatorVisibility ="None"
+              HasUnevenRows="true"             
+              ItemsSource="{Binding NavItems}">
+            <ListView.Header>
+                
+                <Grid BackgroundColor="#aee571">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/> 
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="Uname"
+                           Grid.Column="1"
+                           Grid.Row="2"
+                           Text=""
+                           Style="{DynamicResource SubtitleStyle}"/>
+
+                </Grid>
+                
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout  VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="15">
+                            <Image VerticalOptions="Center"
+                                   WidthRequest="30" 
+                                   HeightRequest="30"
+                                   Source="{Binding Icon}" />
+                            <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Start" 
+                                   Text="{Binding Title}" 
+                                   FontSize="17"
+                                   />         
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

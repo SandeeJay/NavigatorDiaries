@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.EntryView"
+             Title="{Binding City,StringFormat='in {0}'}">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!--heading // BackgroundColor="#338a3e"-->
+            <StackLayout Orientation="Vertical"                          
+                         HeightRequest="50"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions = "Start">
+                <StackLayout Orientation="Horizontal" >
+                    <Label x:Name="DateL"  Text="{Binding Date}" Font="Bold,18" TextColor="#212121" />
+                    <Label x:Name="TimeL" Text="{Binding Time}" Font="Bold,18" TextColor="#212121" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  >
+                    <Label x:Name="WeatherL" Text="{Binding Weather}" Font="16" TextColor="#adadad"/>
+                    <Label x:Name="EmotionL" Text="{Binding Emotion}" Font="16" TextColor="#adadad"/>
+                </StackLayout>
+
+            </StackLayout>
+            <!--container-->
+            <StackLayout >
+                <ScrollView VerticalOptions = "StartAndExpand" >
+                    <Label x:Name="EntryDes"  Text="{Binding EntryDescription}"/>
+                </ScrollView>
+            </StackLayout>
+            <!--footer-->
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="40"
+                         VerticalOptions = "EndAndExpand">
+                <Button x:Name="StoryM"  Text="Story Mood" HorizontalOptions = "StartAndExpand" BackgroundColor="#338a3e" WidthRequest="120" Clicked="StoryOnClicked"></Button>
+                <Button Text="Delete" HorizontalOptions = "StartAndExpand" BackgroundColor="#338a3e" WidthRequest="120" Clicked="DeleteEntry"></Button>
+                <Button Text="Export/Share" HorizontalOptions = "EndAndExpand" BackgroundColor="#338a3e" WidthRequest="120" ></Button>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

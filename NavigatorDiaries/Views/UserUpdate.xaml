@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.UserUpdate"
+             Title="Update Details">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand"  Padding="10" Spacing="20">
+            <Frame BackgroundColor="White" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="5">
+                    <Label Text="Username" FontSize="16" />
+                    <Entry x:Name="usernameEntry" Placeholder="UserName" Text="{Binding Username}"/>
+
+                    <Label Text="Password" />
+                    <Entry x:Name="passwordEntry" IsPassword="true" Text="{Binding Password}"/>
+
+                    <Label Text="Age" />
+                    <Entry x:Name="Age" Keyboard="Numeric" Placeholder="22" Text="{Binding Age}"/>
+
+                    <Label Text="Counrty" />
+                    <Entry x:Name="Country" Placeholder="Sri Lanka" Text="{Binding Country}"/>
+
+                    <Label Text="Interests" />
+                    <Entry x:Name="Intereses" Placeholder="Photrography" Text="{Binding Interests}"/>
+                    <Label Text="Tell Somethning About You" />
+                    <Editor x:Name="Bio"
+                            MaxLength="100"
+                            AutoSize="TextChanges"
+                            HeightRequest="50"
+                            Text="{Binding Bio}" />
+
+                    <Button Text="Update" Clicked="OnUpdateButtonClicked" 
+                            BackgroundColor="#088da5"
+                            TextColor="White"  
+                            FontAttributes="Bold" FontSize="Large"/>
+                    <Label x:Name="messageLabel" TextColor="White"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

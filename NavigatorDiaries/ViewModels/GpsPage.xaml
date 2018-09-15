@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.GpsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="lattitude"></Label>
+            <Label x:Name="LatLabel"></Label>
+            <Label Text="longatude"></Label>
+            <Label x:Name="LonLabel"></Label>
+
+            <Button Text="Position" Clicked="Button_OnClicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

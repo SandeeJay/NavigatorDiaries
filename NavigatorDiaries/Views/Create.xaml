@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.Create"             
+             Title="Create Journal">
+
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout BackgroundColor="#338a3e" 
+                         Orientation="Horizontal"
+                         HeightRequest="40">
+                <StackLayout HorizontalOptions = "LayoutOptions.Start" 
+                             WidthRequest="120">
+                    <Button x:Name="Save" 
+                            Text="Save" 
+                            TextColor="White" 
+                            Font="Bold,16" 
+                            BackgroundColor="#98ee99" 
+                            HeightRequest="40" 
+                            WidthRequest="120" 
+                            Clicked="OnCreateClicked">
+                    </Button>
+                </StackLayout>
+                <ScrollView Orientation="Horizontal" HorizontalOptions = "LayoutOptions.End">
+                    <StackLayout Orientation="Horizontal" >
+                        <Label x:Name="location"  TextColor="White" Font="18" Text="{Binding City}"/>
+                        <Label x:Name="weatherLabel"  TextColor="White" Font="18" Text="{Binding Weather}"/>
+                        <Entry x:Name="EmotionEntry" WidthRequest="120" Text="{Binding Emotion}" />
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            
+            <StackLayout HorizontalOptions = "LayoutOptions.Start" Orientation="Vertical">
+                <Label x:Name="CDate" TextColor="Black" Font="16" Text="{Binding Date}" ></Label>
+                <Label x:Name="CTime" TextColor="Black" Font="16" Text="{Binding Time}" ></Label>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions = "LayoutOptions.Fill" >
+                <Editor x:Name="JournalEntry"
+                        MaxLength="1000"
+                        AutoSize="TextChanges"
+                        HeightRequest="450"
+                        Text="{Binding EntryDescription}" >
+               </Editor>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="AddImage" 
+                            Text="Add Image" 
+                            TextColor="White" 
+                            Font="Bold,16" 
+                            BackgroundColor="#98ee99" 
+                            HeightRequest="40" 
+                            WidthRequest="120" >
+
+
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

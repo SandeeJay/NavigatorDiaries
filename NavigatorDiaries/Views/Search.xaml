@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="NavigatorDiaries.Views"
+             x:Class="NavigatorDiaries.Views.Search"
+             Title="Search Journal">
+    <ContentPage.Content>
+
+        <StackLayout >
+          <ScrollView Orientation="Horizontal">
+            <StackLayout BackgroundColor="#aee571" Orientation="Horizontal">
+                <StackLayout WidthRequest="120" HorizontalOptions = "LayoutOptions.Start"  >
+                    <Label Text="Select Date"/>
+                    <DatePicker x:Name="SearchDate" MinimumDate="01/01/2018"
+                               MaximumDate="12/31/2020"
+                              
+                               Format="dddd, dd MMMM yyyy"
+                             />
+                </StackLayout>
+                    <!--DateSelected="OnDateSelected"-->
+                <StackLayout WidthRequest="120" HorizontalOptions = "LayoutOptions.End" >
+                        <Label Text="Select Location"/>
+                        <Picker  x:Name="LocationPicker" Title="Location">
+                            <Picker.ItemDisplayBinding>
+                                <Binding Path="City"/>
+                            </Picker.ItemDisplayBinding>
+                        </Picker>
+                    </StackLayout>
+                <!--Second row-->
+                    <StackLayout BackgroundColor="#aee571" Orientation="Horizontal"  >
+                        <StackLayout WidthRequest="120" HorizontalOptions = "LayoutOptions.Start" >
+                            <Label Text="Select Emotion"/>
+                            <Picker  x:Name="EmotionPicker" Title="Emotion">
+                                <Picker.ItemDisplayBinding>
+                                    <Binding Path="Emotion"/>
+                                </Picker.ItemDisplayBinding>
+                            </Picker>
+
+                        </StackLayout>
+                        <StackLayout WidthRequest="120" HorizontalOptions = "LayoutOptions.End" >
+                            <Label Text="Select Weather"/>
+                            <Picker  x:Name="WeatherPicker" Title="Weather"
+                                     SelectedItem="{Binding SelectedWeather}" 
+                                     >
+                                <Picker.ItemDisplayBinding>
+                                    <Binding Path="Weather"/>
+                                </Picker.ItemDisplayBinding>
+                            </Picker>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+          </ScrollView>
+            <StackLayout>
+                <Button Text="Search" HorizontalOptions = "LayoutOptions.Fill" BackgroundColor="#338a3e" TextColor="White" Clicked="SearchClicked" ></Button>
+            </StackLayout>
+            <ListView  x:Name="RecentList" RowHeight="100" 
+                   
+                   ItemSelected="OnItemSelected" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="1">
+                                <Frame OutlineColor="#aee571"
+                                   Padding="10"
+                                       >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="White" >
+                                        <Image Source="{Binding Image}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text = "{Binding Date} " FontSize="18" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                                                <Label Text = "{ Binding Time}" FontSize="18" AbsoluteLayout.LayoutBounds="0.25, 0.50, 400, 40"/>
+                                            </StackLayout>
+                                            <Label Text = "{Binding EntryDescription}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

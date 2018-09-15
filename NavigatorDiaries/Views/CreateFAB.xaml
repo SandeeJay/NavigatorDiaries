@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigatorDiaries.Views.CreateFAB"
+             Title="Create">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="2,20,400,300">
+            <Label   Text=" There is a pleasure in the pathless woods,
+&#10; There is a rapture on the lonely shore,&#10;
+There is society where none intrudes,&#10; By the deep Sea, and music in its roar:&#10;
+I love not Man the less, but Nature more " 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Font="Bold,20"
+                TextColor="#212121"
+                     />                               
+            </StackLayout>
+            
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="260,400,100,100" >
+
+                
+                    <Button x:Name="CreateButton"
+                            Image="drawable/add"  
+                            BackgroundColor="#98ee99" 
+                            HeightRequest="90" 
+                            WidthRequest="90"
+                            BorderRadius="70"
+                            Clicked="Create_Clicked"
+                            >
+                    </Button>
+                    
+            </AbsoluteLayout>
+            
+            
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>   
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local="NavigatorDiaries.Views"
+             x:Class="NavigatorDiaries.Views.Profile" 
+             BackgroundColor="#98ee99"
+             Title="Profile">
+    <ContentPage.Content>
+
+        <ListView x:Name="ProData" RowHeight="600" ItemSelected="OnUserSelected" >
+                <ListView.ItemTemplate >
+                  <DataTemplate>
+                     <ViewCell>
+
+                        <AbsoluteLayout BackgroundColor="#98ee99" >
+                            <!--cover image-->
+                            <StackLayout x:Name="CoverImg" BackgroundColor="White" Orientation="Horizontal"
+                                 AbsoluteLayout.LayoutBounds="0,0,1,100" 
+                                 AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" >
+                            </StackLayout>
+                            <!--profile image-->
+                            <AbsoluteLayout AbsoluteLayout.LayoutBounds=".5,55,70,70"  
+                                        AbsoluteLayout.LayoutFlags="XProportional">
+
+                                <controls:CircleImage x:Name="ProfileImg"  
+                                                  Source="@drawable/person" 
+                                                  WidthRequest="80" HeightRequest="80" 
+                                                  BorderColor="#338a3e" 
+                                                  BorderThickness="3" 
+                                                  BackgroundColor="Transparent"
+                                                  >
+                                </controls:CircleImage>
+                                
+                            </AbsoluteLayout>
+
+                            <!--Text fields-->
+                            <Label x:Name="Uname" 
+                               FontAttributes="Bold" 
+                               FontSize="26" 
+                               TextColor="Black" 
+                               HorizontalTextAlignment="Center" 
+                               AbsoluteLayout.LayoutBounds=".5,140,1,40" 
+                               AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                               Text="{Binding Username}"/>
+                            <Label x:Name="UserBioLable" 
+                               FontSize="18"
+                               Text="{Binding Bio}"
+                               TextColor="White" 
+                               BackgroundColor="#66bb6a" 
+                               AbsoluteLayout.LayoutBounds=".5,180,1,40"
+                               AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+
+
+                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,270,1,50" 
+                                        AbsoluteLayout.LayoutFlags="WidthProportional" 
+                                        Padding="5,0,0,0">
+                                <Label FontSize="18" 
+                                   Text="Age:" 
+                                   TextColor="#212121" 
+                                   AbsoluteLayout.LayoutBounds="0,25,.25,50" 
+                                   AbsoluteLayout.LayoutFlags="WidthProportional" />
+                                <Label x:Name="UserAgeLable" 
+                                   FontSize="18"
+                                   Text="{Binding Age}" 
+                                   TextColor="White" 
+                                   AbsoluteLayout.LayoutBounds="1,25,.80,50" 
+                                   AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                            </AbsoluteLayout>
+
+
+                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,320,1,50" 
+                                        AbsoluteLayout.LayoutFlags="WidthProportional" 
+                                        Padding="5,0,0,0">
+                                <Label FontSize="18" 
+                                   Text="Country:" 
+                                   TextColor="#212121" 
+                                   AbsoluteLayout.LayoutBounds="0,25,.25,50" 
+                                   AbsoluteLayout.LayoutFlags="WidthProportional" />
+                                <Label x:Name="UserCountryLable" 
+                                   FontSize="18"
+                                   Text="{Binding Country}" 
+                                   TextColor="White" 
+                                   AbsoluteLayout.LayoutBounds="1,25,.80,50" 
+                                   AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                            </AbsoluteLayout>
+
+
+                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,370,1,50" 
+                                        AbsoluteLayout.LayoutFlags="WidthProportional" 
+                                        Padding="5,0,0,0">
+                                <Label FontSize="18" 
+                                   Text="Interests:" 
+                                   TextColor="#212121" 
+                                   AbsoluteLayout.LayoutBounds="0,25,.25,50" 
+                                   AbsoluteLayout.LayoutFlags="WidthProportional" />
+                                <Label x:Name="UserInterestsLable" 
+                                   FontSize="18"
+                                   Text="{Binding Interests}" 
+                                   TextColor="White" 
+                                   AbsoluteLayout.LayoutBounds="1,25,.80,50" 
+                                   AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                            </AbsoluteLayout>
+
+                            <!--Update Button-->
+                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,470,1,50" 
+                                        AbsoluteLayout.LayoutFlags="WidthProportional" 
+                                        Padding="5,0,0,0">
+                                <Label x:Name="EditDetailsB"  
+                                    Text="Edit Details" 
+                                    BackgroundColor="#338a3e" 
+                                    TextColor="white" 
+                                    FontSize="Large" 
+                                    HeightRequest="50" 
+                                    WidthRequest="400"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    >
+                                    
+                                </Label>
+                            </AbsoluteLayout>
+                        </AbsoluteLayout>
+
+                    </ViewCell>
+                    </DataTemplate>
+                 </ListView.ItemTemplate >
+            </ListView>
+        
+    </ContentPage.Content>
+</ContentPage>
